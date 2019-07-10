@@ -17,8 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <Clock />
-        <Counter />
+        <Clock /><Counter />
       </header>
     </div>
   );
