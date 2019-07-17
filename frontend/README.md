@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+state includes the data that a components need, is an object.
+state includes data that is local or private to that component. So, other components cannot access that state. It's completely internal to that component.
 
-In the project directory, you can run:
+props: includes data that we give to a component. Is read only, we cannot change the values of props.
 
-### `npm start`
+jsx expression can be use like js objects, any part of the code, like arguments
+of a function, return it from a functions etc. As a value of const for example.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+set attribute at a element
 
-### `npm test`
+rendering class dynamically: depending on a value of some state property.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+so that react notes that an state property has changed we need to use a method from the component that we extend. This method is "setState", and tells react that we updated the property, so he can make changes and update the DOM with the virtual DOM.
+Angular is diferent, automatically detects the changes.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+so, when we use the "setState" method, this set a call to the render method (asynchronous call), then React, matches the old tree of elements with the new one in the virtual DOM, it figures out what element of the tree has changed and then updates the element in the DOM, this way we can see that reacts only updates the element that has changed and no other in the page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Passing children
+There are times which we need to pass complex elements to a child component. To do this we use
+children props. with this.props.children.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Raising and handling events
+The component that owns a piece of the state, should be the one modifying it.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

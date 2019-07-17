@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { getMovies , deleteMovie } from '../services/fakeMovieService';
+import Counter from './counter';
 
 class Movies extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {             
             movies: getMovies()
          };
     }
@@ -48,6 +49,7 @@ class Movies extends Component {
                 <th scope="col">Genre</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Rate</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
