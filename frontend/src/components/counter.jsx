@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 /* A Controlled component does not have it's own local state, it receives all the data via
 props and raises event whenever data needs to be changed. So this component is entirely 
 controlle by his parent */
@@ -16,24 +15,37 @@ class Counter extends Component {
       /* JSX expression which eventually gets compiled by Babel 
       to calls to React.createElement. That's why we have to 
       import the React Obj  */
-      <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button
-          //onClick={this.handleIncrement /* only function reference */}
-          onClick={() => this.props.onIncrement(this.props.counter)}
-          className="btn btn-outline-dark btn-sm"
-        >
-          Increment
-        </button>
-        <button
-          onClick={() => this.props.onDelete(this.props.counter.id)}
-          className="btn btn-danger btn-sm m-2"
-        >
-          Delete
-        </button>
+
+      <div className="row">
+        <div className="col-sm-1">
+          <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        </div>
+        <div className="col">
+          <button
+            //onClick={this.handleIncrement /* only function reference */}
+            onClick={() => this.props.onIncrement(this.props.counter)}
+            className="btn btn-outline-dark btn-sm "
+          >
+            +
+          </button>
+          <button
+            onClick={() => this.props.onDecrement(this.props.counter)}
+            className="btn btn-outline-dark btn-sm m-2"
+            disabled={this.props.counter.value === 0 ? true : false}
+          >
+            -
+          </button>
+          <button
+            onClick={() => this.props.onDelete(this.props.counter.id)}
+            className="btn btn-danger btn-sm"
+          >
+            X
+          </button>
+        </div>
+
         {/* <ul>
-                    {this.renderTags()}
-                </ul> */}
+              {this.renderTags()}
+           </ul> */}
       </div>
     );
   }
