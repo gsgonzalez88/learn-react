@@ -19,11 +19,11 @@ class Counters extends Component {
     const index = counters.indexOf(counter); //returns the index of the counter in the counters array
     counters[index] = { ...counter }; //here we clone the counter that we receive as args at the index position
     counters[index].value++; //we increment this counters clone at the index position.
-    this.setState({ counters });
+    this.setState({ counters });    
   };
 
   handleDelete = counterId => {
-    if (window.confirm("Are you sure you wish to delete this item?")) {
+    if (window.confirm("Are you sure you wish to delete this counter?")) {
       const counters = this.state.counters.filter(c => c.id !== counterId);
       this.setState({ counters: counters });
     }
@@ -51,7 +51,8 @@ class Counters extends Component {
             key={counter.id} //this value is used by react internally, we cannot acces to this atributte
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
-            counter={counter}
+            counter={counter} //this object contains everything we need for a counter, all the properties.
+            //and if we need in the future to add another prop, it will be simplier.
           />
         ))}
       </div>

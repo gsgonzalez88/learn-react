@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 
+
+/* A Controlled component does not have it's own local state, it receives all the data via
+props and raises event whenever data needs to be changed. So this component is entirely 
+controlle by his parent */
+
 class Counter extends Component {
   /* state = {
     value: this.props.counter.value
@@ -8,10 +13,9 @@ class Counter extends Component {
 
   render() {
     return (
-      /* JSX expression which eventually
-            gets compiled by Babel to calls to 
-            React.createElement. That's why we
-             have to import the React Obj  */
+      /* JSX expression which eventually gets compiled by Babel 
+      to calls to React.createElement. That's why we have to 
+      import the React Obj  */
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
@@ -42,7 +46,7 @@ class Counter extends Component {
     */
 
   //the other way is to use an arrow function, wich has the current object binded to "this"
-/*   handleIncrement = () => {
+  /*   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
   }; */
 

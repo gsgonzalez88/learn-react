@@ -30,4 +30,9 @@ Raising and handling events
 The component that owns a piece of the state, should be the one modifying it.
 
 
+Removing the local state
+Controlled components does not have it is own state, ir receives all the data via props and raises events
+whenever data needs to be changed. So this  is entirely controlled by it's parent.
+
+
 
