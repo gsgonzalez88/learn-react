@@ -35,4 +35,3 @@ Controlled components does not have it is own state, ir receives all the data vi
 whenever data needs to be changed. So this  is entirely controlled by it's parent.
 
 
-
